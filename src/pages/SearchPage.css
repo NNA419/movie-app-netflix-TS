@@ -1,0 +1,106 @@
+.search-container {
+    justify-content: center;
+}
+
+.all-movie-search {
+    display: flex;
+    justify-content: center;
+}
+
+.movies-search-wrapper {
+    background-color: black;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-title-search {
+    margin: 0px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: white;
+    background-color: transparent;
+}
+
+.movie-search-card {
+    border-radius: 15px;
+    width: 300px;
+}
+
+.movies-search-img {
+    width: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-search-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(165, 164, 164);
+    cursor: pointer;
+}
+
+.movie-search-title:hover {
+    color: white;
+}
+
+/* -------------------Reponsive Size ipad mini ----------------- */
+@media (max-width : 768px) {
+    .movies-search-wrapper {
+        padding-left: 7%;
+    }
+
+    .main-title-search {
+        font-size: 15px;
+        padding-top: 70px;
+        padding-bottom: 10px;
+    }
+
+    .movie-search-card {
+        width: 150px;
+    }
+
+    .movies-search-img {
+        width: 150px;
+    }
+
+    .movie-search-title {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}
+
+/* -------------------Reponsive Size iphone SE ----------------- */
+@media (max-width : 375px) {
+    .movies-search-wrapper {
+        padding-left: 7%;
+    }
+
+    .main-title-search {
+        font-size: 15px;
+        padding-top: 70px;
+        padding-bottom: 10px;
+    }
+
+    .movie-search-card {
+        width: 150px;
+    }
+
+    .movies-search-img {
+        width: 150px;
+    }
+
+    .movie-search-title {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}

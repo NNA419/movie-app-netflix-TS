@@ -1,0 +1,178 @@
+.explore-movie-container {
+    background-color: black;
+}
+
+.main-title {
+    color: white;
+    width: auto;
+    height: 100px;
+    padding-top: 70px;
+}
+
+.title-expl-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.movie-card-wrapper {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-left: 0%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.movie-card {
+    margin-right: 5px;
+    width: 350px;
+}
+
+.movie-expl-img {
+    width: 350px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-expl-title {
+    width: 200px;
+    margin: 5px;
+    cursor: pointer;
+    color: rgb(159, 160, 160);
+}
+
+.movie-expl-title:hover {
+    color: white;
+}
+
+.ant-pagination-item a {
+    color: white !important;
+    background-color: transparent;
+}
+
+.ant-pagination-item-active a {
+    background-color: rgb(31, 30, 30);
+}
+
+.ant-pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.ant-pagination .ant-pagination-prev {
+    color: black;
+    background-color: white;
+}
+
+.ant-pagination .ant-pagination-next {
+    color: black;
+    background-color: transparent;
+}
+
+.ant-pagination .ant-pagination-prev {
+    color: black;
+    background-color: transparent;
+}
+
+.ant-pagination .ant-pagination-next {
+    color: black;
+    background-color: transparent;
+}
+
+.anticon {
+    color: white;
+}
+
+.ant-pagination .ant-pagination-item {
+    border: none;
+    background-color: transparent;
+}
+
+/* ------------Reponsive for ipad-size--------------- */
+
+@media (max-width : 768px) {
+    .main-title {
+        font-size: 30px;
+    }
+
+    .movie-expl-img {
+        width: 300px;
+        border-radius: 2px;
+    }
+
+    .movie-card {
+        margin-right: 2px;
+        width: 300px;
+    }
+
+    .movie-expl-title {
+        width: 250px;
+        margin: 5px;
+    }
+
+    .movie-card-wrapper {
+        width: 100%;
+        background-color: black;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .movie-card {
+        margin-right: 0px;
+        width: 50%px;
+    }
+
+    .movie-expl-img {
+        width: 300px;
+    }
+}
+
+/* ------------Reponsive for iphone 12pro --------------- */
+@media (max-width : 390px) {
+    .main-title {
+        font-size: 15px;
+        margin-bottom: 0px;
+        padding-top: 50px;
+    }
+
+    .movie-expl-img {
+        width: 250px;
+        border-radius: 2px;
+    }
+
+    .movie-card {
+        margin-right: 2px;
+    }
+
+    .movie-expl-title {
+        width: 250px;
+        margin: 5px;
+    }
+
+    .movie-card-wrapper {
+        padding-top: 0px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .movie-card {
+        margin-right: 0px;
+        width: 50%px;
+    }
+
+    .movie-expl-img {
+        width: 300px;
+    }
+}

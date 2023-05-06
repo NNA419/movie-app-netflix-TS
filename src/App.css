@@ -1,38 +1,988 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+        sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+    background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ----------------------------------------------------------header */
+
+.napbar-container {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
-.App-link {
-  color: #61dafb;
+.header-container {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-menu {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.logo-wrapper {
+    width: 100px;
+    cursor: pointer;
+}
+
+.logo-wrapper img {
+    width: 100%;
+}
+
+.menu-wrapper {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    gap: 15px;
+    letter-spacing: 0.2px;
+}
+
+.menu-wrapper div:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#basic-button {
+    border: none;
+    background-color: transparent;
+    display: none;
+    color: white;
+}
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.search-icon {
+    cursor: pointer;
+    color: white;
+    transform: translateX(24px) translateY(8px);
+    width: 20px;
+    height: 20px;
+}
+
+.input-search {
+    font-size: 14px;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 0px;
+    padding: 10px;
+    opacity: 0;
+    background-color: black;
+    transition: 0.3s ease-out;
+    color: white;
+}
+
+.input-search:focus {
+    padding-left: 25px;
+    width: 300px;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 6px;
+}
+
+.dvd {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.notification-icon {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.sign-in {
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+/* -----------------------------------------------------------  footer */
+
+.footer-menu-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-footer-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%px;
+    background-color: black;
+}
+
+.footer-container {
+    color: grey;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.title-list-footer li a {
+    color: grey;
+    text-decoration: none;
+}
+
+.title-list-footer li a:hover {
+    text-decoration: underline;
+}
+
+.title-list-footer li {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-menu-wrapper {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.footer-icon-wrapper button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.Service-code-btn {
+    background-color: transparent;
+    color: gray;
+    border: 1px solid;
+    width: 100px;
+    height: 30px;
+}
+
+.Service-code-btn:hover {
+    color: white;
+}
+
+.media-btn {
+    border: none;
+    background-color: transparent;
+}
+
+.copy-right {
+    font-size: 12px;
+}
+
+/* ----------------------------------------------------  trailer */
+
+.img-des {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.img-unlocked {
+    width: 400px;
+}
+
+.des-unlock {
+    font-size: 20px;
+    color: white;
+    width: 400px;
+}
+
+.intro-container {
+    position: relative;
+}
+
+.introduce-movie-trailer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    left: 40px;
+    gap: 40px;
+}
+
+.btn-play-moreinfo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.play-btn {
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+}
+
+#basic-button:hover {
+    cursor: pointer;
+    color: #a7a5a5;
+}
+
+.play-btn:hover {
+    background-color: rgb(212, 204, 204);
+    transition: 0.1s ease-in;
+}
+
+.more-info-btn {
+    width: 180px;
+    background-color: rgba(128, 128, 128, 0.61);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    font-weight: 500;
+}
+
+#play-icon {
+    font-size: 45px;
+    margin-left: 10px;
+}
+
+#info-icon {
+    font-size: 35px;
+}
+
+.react-player {
+    overflow: hidden;
+}
+
+.react-player video {
+    margin-top: -8%;
+    /* margin-bottom: -8%; */
+}
+
+.tag-mute-wrapper {
+    position: absolute;
+    right: 0px;
+    bottom: 300px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.tag-wrapper {
+    width: 100px;
+    height: 42px;
+    color: white;
+    background-color: rgba(70, 68, 68, 0.534);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 22px;
+    border-left: 2px solid white;
+}
+
+.tag13 {
+    margin-left: 20px;
+}
+
+.mute-btn {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#volume-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.background-cover {
+    background-image: linear-gradient(180deg,
+            transparent,
+            rgba(0, 0, 0, 1) 60%,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1));
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.movies-container {
+    padding: 40px 0px 40px 40px;
+    z-index: 1 !important;
+    background-color: black;
+}
+
+.movies-list-container {
+    color: white;
+    position: relative;
+}
+
+.movies-list-container h1 {
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------img-movie */
+
+.img-movie:hover {
+    cursor: pointer;
+}
+
+.movie-kind-name:hover {
+    cursor: pointer;
+}
+
+.Explore-moviekind-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.Explore-btn {
+    background-color: transparent;
+    color: cyan;
+    border: none;
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Explore-btn:hover {
+    cursor: pointer;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-5%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.Explore-btn:hover {
+    cursor: pointer;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    background-color: transparent;
+    color: white;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.swiper-button-prev::after {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.swiper-button-prev:hover {
+    opacity: 1;
+}
+
+.swiper-button-next {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.swiper-button-next::after {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.swiper-button-next:hover {
+    opacity: 1;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-email {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+/* -----------------------------------------Responsive ipad mini size ------- */
+@media (max-width: 768px) {
+    .logo-wrapper {
+        width: 15%;
+    }
+
+    .menu-wrapper {
+        display: none;
+    }
+
+    #basic-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .browse-list {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        left: 30px;
+    }
+
+    .btn-list {
+        background-color: rgba(0, 0, 0, 0.932);
+        border: none;
+        color: white;
+        font-size: 12px;
+        height: 30px;
+        width: 200px;
+    }
+
+    .btn-list:hover {
+        color: rgb(187, 182, 182);
+    }
+
+    .introduce-movie-trailer {
+        top: 100px;
+        gap: 10px;
+    }
+
+    .img-des .img-unlocked {
+        width: 300px;
+    }
+
+    .img-des .des-unlock {
+        font-size: 12px;
+        color: white;
+        width: 300px;
+    }
+
+    .footer-container .title-footer {
+        font-size: 10px;
+    }
+
+    .footer-container .Service-code-btn {
+        font-size: 10px;
+        width: 80px;
+        height: 25px;
+    }
+
+    .footer-container .copy-right {
+        font-size: 10px;
+    }
+
+    .main-footer-container .footer-container {
+        margin: 40px;
+        width: 75%;
+    }
+
+    .background-cover {
+        height: 100px;
+    }
+
+    .img-des .img-unlocked {
+        width: 180px;
+    }
+
+    .tag-mute-wrapper {
+        top: 200px;
+    }
+
+    .tag-wrapper {
+        width: 80px;
+        height: 25px;
+        font-size: 15px;
+        font-weight: 200;
+    }
+
+    .mute-btn {
+        width: 25px;
+        height: 25px;
+        padding: 4px;
+    }
+
+    .mute-btn #volume-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .play-btn {
+        font-weight: 600;
+        font-size: 13px;
+        width: 70px;
+        height: 25px;
+    }
+
+    .play-btn #play-icon {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .more-info-btn {
+        font-size: 13px;
+        width: 100px;
+        gap: 5px;
+    }
+
+    .more-info-btn #info-icon {
+        font-size: 20px;
+    }
+
+    .input-search:focus {
+        padding-left: 25px;
+        width: 200px;
+        border-radius: 6px;
+    }
+
+    .Explore-btn {
+        font-size: 10px;
+    }
+
+    .movies-list-container h1 {
+        font-size: 14px;
+    }
+}
+
+/* -----------------------------------------Responsive iphone 12pro size ---- */
+@media (max-width: 390px) {
+
+    /* ---------------------------------------------------------- header */
+    .napbar-container {
+        height: 50px;
+    }
+
+    .header-container {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-menu {
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .logo-wrapper {
+        width: 70px;
+        cursor: pointer;
+    }
+
+    .logo-wrapper img {
+        width: 100%;
+    }
+
+    .menu-wrapper {
+        display: none;
+    }
+
+    .browse-list {
+        left: 30px;
+    }
+
+    .btn-list {
+        font-size: 11px;
+        height: 22px;
+        width: 150px;
+    }
+
+    #basic-button {
+        font-size: 12px;
+    }
+
+    .icon-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .search-wrapper {
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+    }
+
+    .input-search {
+        font-size: 12px;
+        border: 1px solid white;
+        width: 0px;
+        padding: 10px;
+        opacity: 0;
+        background-color: black;
+        transition: 0.3s ease-out;
+        color: white;
+    }
+
+    .input-search:focus {
+        width: 200px;
+    }
+
+    .dvd {
+        font-size: 12px;
+    }
+
+    .notification-icon {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+
+    .sign-in {
+        font-size: 12px;
+    }
+
+    /* --------------------------------------------------------- footer */
+    .footer-menu-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .title-footer {
+        width: 130px;
+    }
+
+    .title-footer a {
+        padding: 3px;
+    }
+
+    .footer-menu-wrapper ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-container {
+        padding-bottom: 20px;
+    }
+
+    .title-list-footer li {
+        gap: 0px;
+    }
+
+    .footer-icon-wrapper button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ----------------------------------------------------  trailer */
+
+    .img-des {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .img-des .img-unlocked {
+        width: 150px;
+    }
+
+    .des-unlock {
+        font-size: 12px;
+    }
+
+    .intro-container {
+        position: relative;
+    }
+
+    .introduce-movie-trailer {
+        top: 200px;
+        left: 10px;
+        gap: 20px;
+    }
+
+    .btn-play-moreinfo {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .play-btn {
+        width: 80px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .more-info-btn {
+        width: 100px;
+        height: 25px;
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    #play-icon {
+        font-size: 45px;
+        margin-left: 10px;
+    }
+
+    #info-icon {
+        font-size: 35px;
+    }
+
+    .react-player video {
+        margin-top: -8%;
+        /* margin-bottom: -8%; */
+    }
+
+    .tag-mute-wrapper {
+        margin-top: 10px;
+        right: 0px;
+        bottom: 300px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tag-wrapper {
+        width: 50px;
+        height: 20px;
+        font-size: 12px;
+        border-left: 1px solid white;
+    }
+
+    .tag13 {
+        margin-left: 10px;
+    }
+
+    .mute-btn {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #volume-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .background-cover {
+        height: 50px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .movies-container {
+        padding: 40px 0px 40px 40px;
+        z-index: 1 !important;
+        background-color: black;
+    }
+
+    .movies-list-container {
+        color: white;
+        position: relative;
+    }
+
+    .movies-list-container h1 {
+        font-size: 1.4vw;
+        font-weight: 500;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+
+    /* --------------------------------------------------------------- movie */
+
+    .movies-list-container h1 {
+        font-size: 11px;
+    }
+
+    .movies-container {
+        margin-top: 150px;
+    }
+
+    .Explore-moviekind-wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .Explore-btn {
+        background-color: transparent;
+        color: cyan;
+        border: none;
+        animation-name: slideIn;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-prev {
+        width: 40px;
+    }
+
+    .swiper-button-prev.swiper-button-disabled {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .swiper-button-prev::after {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .swiper-button-next {
+        width: 40px;
+    }
+
+    .swiper-button-next::after {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .user-email {
+        font-size: 12px;
+        font-weight: 400;
+        color: white;
+    }
 }
